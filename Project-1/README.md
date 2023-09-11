@@ -2,8 +2,6 @@
 
 Your first project will require you to answer each of the 10 questions below.  You will be expected to open a pull request with your initial answers by the second class meeting, giving you one week to work on these problems. You and your peers will then have one week to work together to refine your respective initial answers, so they are ready for final submission. Once your pull requests have been reviewed and merged to the development branch, I will review them, then merge to the master branch. 
 
-```3k4if3l4j3l4rj3l4r
-ciaociao
 Tip #1: Carefully study the Hedman selections assigned, as several of the questions are taken directly from the textbook. 
 Tip #2: Google is your friend. An important skill to pick up in this class is recognizing when to think hard and when to think smart. You might find answers to some of the questions below simply by googling; you might find pieces of answers to parts of some question below, which will need to be combined; then again, you might not find any help at all because the questions are more novel than they initially appear. I encourage you to use existing resources as guidance, but be careful. My reputation for asking students tricky questions is well-earned. 
 Tip #3: Work _together_ to solve these problems, even for initial submissions and when you do, document this in github. For example, you might feel like you nearly have answers to question 1, but would love another pair of eyes. You can then open a post in your local github account, and tag folks from class requesting they check out your work. 
@@ -15,18 +13,84 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
 1. Provide the truth tables for each of the following propositional logic formulas. State whether each is a tautology, a contradiction, or contingent:
   ```
   (a) (¬A→B)∨((A∧¬C)→B) 
-  (b) (A→B)∧(A→¬B)
+
+  A   B   C   (a)
+  T   T   F    T
+  T   T   F    T
+  T   F   T    T
+  F   T   T    T
+  T   F   F    T
+  F   T   F    T
+  F   F   T    T
+  F   F   F    T
+  Tautology
+
+  (b) (A→B)∧(A→¬B) 
+
+  A  B  (b)
+  T  T   F
+  T  F   F
+  F  T   T
+  F  F   T
+  Contingent
+
   (c) (A→(B∨C))∨(C→¬A) 
+
+  A   B   C  (c)
+  T   T   F   T 
+  T   T   F   T 
+  T   F   T   T
+  F   T   T   T 
+  T   F   F   T 
+  F   T   F   T 
+  F   F   T   T 
+  F   F   F   T
+  Tautology
+
   (d) ((A→B)∧C)∨(A∧D) 
+
+  A  B  C  D  (d)
+  T  T  T  T   T
+  T  T  T  F   T
+  T  T  F  T   T
+  T  T  F  F   F
+  T  F  T  T   T
+  T  F  T  F   F
+  T  F  F  T   T
+  T  F  F  F   F
+  F  T  T  T   T
+  F  T  T  F   T
+  F  T  F  T   F
+  F  T  F  F   F
+  F  F  T  T   T
+  F  F  T  F   T
+  F  F  F  T   F
+  F  F  F  F   F
+  Contingent
   ```
 	
 2. A _literal_ is an atomic formula or the negation of an atomic formula. We say a formula is in _conjunctive normal form_ (CNF) if it is the conjunction of the disjunction of literals. Find propositional logic formulas in CNF equivalent to each of the following:
   ```
   (a) (A→B)→C
-  (b) (A→(B∨C))∨(C→¬A)
-  (c) (¬A∧¬B∧C)∨(¬A∧¬C)∨(B∧C)∨A 
-  ```
+  (¬A∨B)→C
+  ¬(¬A∨B)∨C
+  (A∧¬B)∨C
+  (A∨C)∧(¬B∨C)  
   
+  (b) (A→(B∨C))∨(C→¬A)
+  It is a tautology. A∧¬A
+  
+The calculator gives me the result "true". Giacomo and Karl wrote it is a tautology. it results so checking it's truth table. However, I am not able to solve it with the Morgan's rules. Should I check at first the truth table and if it is a tautology then directly state that ?
+
+  (c) (¬A∧¬B∧C)∨(¬A∧¬C)∨(B∧C)∨A 
+ It is a tautology. A∧¬A
+  
+The calculator gives me the result "true". Giacomo and Karl wrote it is a tautology. it results so checking it's truth table. However, I am not able to solve it with the Morgan's rules. Should I check at first the truth table and if it is a tautology then directly state that ? Isn't a parenthesis missed in the first part (¬A∧¬B∧C)?
+
+  ```
+  I solved this question, using the Morgan's rules and checking Giacomo and Karl's answers.
+  I also used this logic calculator https://www.erpelstolz.at/gateway/formular-uk-zentral.html
+
 3. Let V be the vocabulary of first-order logic consisting of a binary relation P and a unary relation F. Interpret P(x,y) as “x is a parent of y” and F(x) as “x is female.” Where possible define the following formulas in this vocabulary; where not possible, explain why: 
   
   ```
