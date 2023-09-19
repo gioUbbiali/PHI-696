@@ -31,10 +31,12 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
   (b) (A→B)∧(A→¬B) 
 
   A  B  (b)
+|---|---|---|
   T  T   F
   T  F   F
   F  T   T
   F  F   T
+  
   Contingent
 
   (c) (A→(B∨C))∨(C→¬A) 
