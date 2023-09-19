@@ -14,15 +14,15 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
   ```
   (a) (¬A→B)∨((A∧¬C)→B) 
 
-  A   B   C   (a)
-  T   T   F    T
-  T   T   F    T
-  T   F   T    T
-  F   T   T    T
-  T   F   F    T
-  F   T   F    T
-  F   F   T    T
-  F   F   F    T
+  A | B | C | (a)
+  T | T | F | T
+  T | T | F | T
+  T | F | T | T
+  F | T | T | T
+  T | F | F | T
+  F | T | F | T
+  F | F | T | T
+  F | F | F | T
   Tautology
 
   (b) (A→B)∧(A→¬B) 
