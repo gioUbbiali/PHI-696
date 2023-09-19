@@ -25,6 +25,7 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
   F | T | F | T
   F | F | T | T
   F | F | F | T
+  
   Tautology
 
   (b) (A→B)∧(A→¬B) 
