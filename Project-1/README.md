@@ -30,7 +30,7 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
 
   (b) (A→B)∧(A→¬B) 
 
-  A   B  (b)
+  A | B| (b)
 |---|---|---|
   T | T | F
   T | F | F
@@ -41,7 +41,7 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
 
   (c) (A→(B∨C))∨(C→¬A) 
 
-  A   B   C  (c)
+  A | B | C | (c)
 |---|---|---|---|
   T | T | F | T 
   T | T | F | T 
@@ -56,8 +56,8 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
 
   (d) ((A→B)∧C)∨(A∧D) 
 
-  A   B   C   D  (d)
-|---|---|---|---|
+  A | B | C | D | (d)
+|---|---|---|---|---|
   T | T | T | T | T
   T | T | T | F | T
   T | T | F | T | T
