@@ -30,47 +30,51 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
 
   (b) (A→B)∧(A→¬B) 
 
-  A  B  (b)
+  A   B  (b)
 |---|---|---|
-  T  T   F
-  T  F   F
-  F  T   T
-  F  F   T
-  
+  T | T | F
+  T | F | F
+  F | T | T
+  F | F | T
+
   Contingent
 
   (c) (A→(B∨C))∨(C→¬A) 
 
   A   B   C  (c)
-  T   T   F   T 
-  T   T   F   T 
-  T   F   T   T
-  F   T   T   T 
-  T   F   F   T 
-  F   T   F   T 
-  F   F   T   T 
-  F   F   F   T
+|---|---|---|---|
+  T | T | F | T 
+  T | T | F | T 
+  T | F | T | T
+  F | T | T | T 
+  T | F | F | T 
+  F | T | F | T 
+  F | F | T | T 
+  F | F | F | T
+
   Tautology
 
   (d) ((A→B)∧C)∨(A∧D) 
 
-  A  B  C  D  (d)
-  T  T  T  T   T
-  T  T  T  F   T
-  T  T  F  T   T
-  T  T  F  F   F
-  T  F  T  T   T
-  T  F  T  F   F
-  T  F  F  T   T
-  T  F  F  F   F
-  F  T  T  T   T
-  F  T  T  F   T
-  F  T  F  T   F
-  F  T  F  F   F
-  F  F  T  T   T
-  F  F  T  F   T
-  F  F  F  T   F
-  F  F  F  F   F
+  A   B   C   D  (d)
+|---|---|---|---|
+  T | T | T | T | T
+  T | T | T | F | T
+  T | T | F | T | T
+  T | T | F | F | F
+  T | F | T | T | T
+  T | F | T | F | F
+  T | F | F | T | T
+  T | F | F | F | F
+  F | T | T | T | T
+  F | T | T | F | T
+  F | T | F | T | F
+  F | T | F | F | F
+  F | F | T | T | T
+  F | F | T | F | T
+  F | F | F | T | F
+  F | F | F | F | F
+
   Contingent
   ```
 	
