@@ -174,14 +174,31 @@ This formula implies that x is male or not male, there exist male y and male z w
 8. Using an online tableau proof generator - such as the one found here `https://www.umsu.de/trees/` - provide tree proofs of the following entailments, which are known as the De Morgan's laws:
   ```
   (a) ∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx))
-![proof](https://github.com/JisooSeo/practice/assets/143667668/4d445ec9-6bd3-440b-a2c4-b0bcd2ed7b13)
-
   (b) ∀x∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx))
   (c) ∀x∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx))
   (d) ∀x∀y((¬Px ∧ ¬Qx) → ¬(Px ∨ Qx))
 ```
-	
+(a) ∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx))
+
+![proof](https://github.com/JisooSeo/PHI-696/assets/143667668/fe20e887-0569-4922-9bc5-994481aba1e5)
+
+(b) ∀x∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx))
+
+![proof (1)](https://github.com/JisooSeo/PHI-696/assets/143667668/5b4961c2-1179-4111-8a63-2098bd03649b)
+
+(c) ∀x∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx))
+
+![proof (2)](https://github.com/JisooSeo/PHI-696/assets/143667668/dc75d718-6d4a-4f31-9e83-cc949c1610c4)
+
+(d) ∀x∀y((¬Px ∧ ¬Qx) → ¬(Px ∨ Qx))
+
+![proof (3)](https://github.com/JisooSeo/PHI-696/assets/143667668/aa0cc56b-fd69-4564-8509-295a2b43ab03)
+
+
 9. Using a natural deduction proof generator - such as the one found here `https://proofs.openlogicproject.org/` - provide natural deduction proofs for each of De Morgan's laws. 
+
+
+
 
 10. Compare and contrast the proofs provided for (a) in your answers to questions 8 and 9. Explain the different assumptions, strategies, etc. exhibited in tree proofs vs natural deduction proofs. 
  
