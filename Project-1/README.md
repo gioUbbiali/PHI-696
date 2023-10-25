@@ -143,9 +143,16 @@ I worked on this question together with the other participants of the "Ontology 
 It is not possible to define this formula in V because it is not possible to denote the relations between individuals using V which is essential in expressing that x is not identical to y.
  
   (b)  A that says that x is an aunt of y
+This formula implies that there is a parent of x which is z, z has a common parent with y, and y is not male. However, it is not possible to say that z is not identical to y in V. Therefore, it is not possible to define this formula in V.
+
   (c)  C that says that x and y are cousins
-  (d)  O that says that x is an only child  
-  (e)  T that says that x has exactly two brothers 
+This formula implies that there is a parent of x which is z, there also is a parent of y which is W, and z and w have a common parent. However, it is not possible to express that z and w are not identical. Therefore, it is not possible to define this formula in V.
+
+  (d)  O that says that x is an only child
+This formula implies that x has a common parent with y and x and y are identical. However, it is not possible to express that x and y are identical in V. Therefore, it is not possible to define this formula in V.
+  
+  (e)  T that says that x has exactly two brothers
+This formula implies that x is male or not male, there exist male y and male z who share a parent with x, and x, y, and z are non-identical. Since we can't express the (non)identical relation among individuals in V, we can't define the formula in V.
   ```
 
 
