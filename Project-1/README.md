@@ -175,7 +175,6 @@ This formula implies that x is male or not male, there exist male y and male z w
   ```
   (a) ∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx))
 ![proof](https://github.com/JisooSeo/PHI-696/assets/143667668/6a35db42-04d2-4407-b09b-17c12ba5cc61)
-
   (b) ∀x∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx))
   (c) ∀x∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx))
   (d) ∀x∀y((¬Px ∧ ¬Qx) → ¬(Px ∨ Qx))
