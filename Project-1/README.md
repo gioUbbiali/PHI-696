@@ -174,7 +174,7 @@ This formula implies that x is male or not male, there exist male y and male z w
 8. Using an online tableau proof generator - such as the one found here `https://www.umsu.de/trees/` - provide tree proofs of the following entailments, which are known as the De Morgan's laws:
   ```
   (a) ∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx))
-![proof](https://github.com/JisooSeo/practice/assets/143667668/4d445ec9-6bd3-440b-a2c4-b0bcd2ed7b13)
+![proof](https://github.com/JisooSeo/PHI-696/assets/143667668/9395dfeb-7060-4661-aae8-7f34562fde34)
 
   (b) ∀x∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx))
   (c) ∀x∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx))
