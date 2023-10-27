@@ -98,10 +98,11 @@ The related truth table shows this formula is a tautology. The calculator gives 
 
   I solved this question, using the Morgan's rules and checking Giacomo and Karl's answers.
   I also used this logic calculator: https://www.erpelstolz.at/gateway/formular-uk-zentral.html
- ```
+```
+
 3. Let V be the vocabulary of first-order logic consisting of a binary relation P and a unary relation F. Interpret P(x,y) as “x is a parent of y” and F(x) as “x is female.” Where possible define the following formulas in this vocabulary; where not possible, explain why: 
   
- 
+  ```
   (a)  B(x,y) that says that x is a brother of y  
   (b)  A(x,y) that says that x is an aunt of y  
   (c)  C(x,y) that says that x and y are cousins   
@@ -134,19 +135,22 @@ T(x) := ∃y∃z(B(y,x)∧B(z,x))∧∀w(B(w,x)→((w=y)v(w=z)∧¬(x=y)∧¬(x=
 Explanation: x has exactly two brothers if there exist y and z such that y is not the same person as z (¬(y=z)), both y and z are brothers of x (B(y,x)∧B(z,x)), and for all w, if w is a brother of x then w must be either y or z (B(w,x)→((w=y)∨(w=z))).
 
 I worked on this question together with the other participants of the "Ontology Sprint" Workshop. We asked to answer this question to ChatGTP. Then, we work together on the generated solution. 
-
 ```
+
 4. Let V be a vocabulary of the attribute (concept) language with complements (ALC) consisting of a role name "parent_of" and a concept name "Male". Interpret parent_of as "x is a parent of y" and M as "x is male". Where possible define the following formulas in this vocabulary; where not possible, explain why: 
-  
+  ```
   (a)  B that says that x is a brother of y
   (b)  A that says that x is an aunt of y
   (c)  C that says that x and y are cousins
-  (d)  O that says that x is an only child
-  (e)  T that says that x has exactly two brothers
-  ```
+  (d)  O that says that x is an only child  
+  (e)  T that says that x has exactly two brothers 
+
+From this point, Jisoo and I stated to work together.
+
 (a)  B that says that x is a brother of y
 
 This formula is impossible to define in ALC without ALCQ. We used ALCQ to define the formula. This is the best expression we got but we are not sure whether we can express that at least on child is male and the others can either be male or female. 
+
 Person ≡ M ⊔ ¬M. p2 (parent of at least 2 children) ≡ ≥2 ∃parent_of.Person. 
 B ≡ M ⊓ ≥2∃parent_of.Person
 
@@ -159,7 +163,19 @@ B ≡ M ⊓ ≥2∃parent_of.Person
   (b) ∃x∀y∃z and ∀x∃y∀z 
   (c) ∀x∃y∀z∃w and ∃x∀y∃z∀w
 ```
-	
+	(a) ∃x∀y and ∀x∃y
+  The formula ∃x∀y means there is some x such that for all ys. Instead, ∀x∃y means for all xs there is  some y such that. 
+
+  (b) ∃x∀y∃z and ∀x∃y∀z 
+  The formula  ∃x∀y∃z means there is some x such that for all ys there is some z. Instead, ∀x∃y∀z for all xs there is some y such that for all z.
+
+  (c) ∀x∃y∀z∃w and ∃x∀y∃z∀w
+  The formula ∀x∃y∀z∃w means for all xs there is some y such that for all zs there is some w such that. Instead, the formula ∃x∀y∃z∀w means there is some x for all ys such as that there is some z for all ws.
+
+  We developped our answers comparing them to those of Giancomo and Karl and those found online.
+
+TO DISCUSS WITH JISOO
+
 7. Show that the following sentences are not equivalent by exhibiting a graph that models one but not both of these sentences:
 ```
 ∀x∃y∀z(R(x,y) ∧ R(x,z) ∧ R(y,z))
@@ -191,9 +207,6 @@ B ≡ M ⊓ ≥2∃parent_of.Person
 
 
 9. Using a natural deduction proof generator - such as the one found here `https://proofs.openlogicproject.org/` - provide natural deduction proofs for each of De Morgan's laws. 
-
-
-
 
 10. Compare and contrast the proofs provided for (a) in your answers to questions 8 and 9. Explain the different assumptions, strategies, etc. exhibited in tree proofs vs natural deduction proofs. 
  
