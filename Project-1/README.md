@@ -135,16 +135,16 @@ T(x) := ∃y∃z(B(y,x)∧B(z,x))∧∀w(B(w,x)→((w=y)v(w=z)∧¬(x=y)∧¬(x=
 Explanation: x has exactly two brothers if there exist y and z such that y is not the same person as z (¬(y=z)), both y and z are brothers of x (B(y,x)∧B(z,x)), and for all w, if w is a brother of x then w must be either y or z (B(w,x)→((w=y)∨(w=z))).
 
 I worked on this question together with the other participants of the "Ontology Sprint" Workshop. We asked to answer this question to ChatGTP. Then, we work together on the generated solution. 
-```
+
 
 4. Let V be a vocabulary of the attribute (concept) language with complements (ALC) consisting of a role name "parent_of" and a concept name "Male". Interpret parent_of as "x is a parent of y" and M as "x is male". Where possible define the following formulas in this vocabulary; where not possible, explain why: 
-  ```
+```
   (a)  B that says that x is a brother of y
   (b)  A that says that x is an aunt of y
   (c)  C that says that x and y are cousins
   (d)  O that says that x is an only child  
   (e)  T that says that x has exactly two brothers 
-
+```
 From this point, Jisoo and I stated to work together.
 
 (a)  B that says that x is a brother of y
@@ -154,25 +154,26 @@ This formula is impossible to define in ALC without ALCQ. We used ALCQ to define
 Person ≡ M ⊔ ¬M. p2 (parent of at least 2 children) ≡ ≥2 ∃parent_of.Person. 
 B ≡ M ⊓ ≥2∃parent_of.Person
 
+
 5. Select two formulas defined in ALC from question 4 to form the basis of a T-Box. Supplement this T-box with whatever other axioms you like, as well as an A-box, so that you ultimately construct a knowledge base K = (T,A). Provide a _model_ of K. This may be graphical or symbolic or both. 
 
 
 6. Explain the difference - using natural language - between the first-order prefixes:
-  ```
+```
   (a) ∃x∀y and ∀x∃y
   (b) ∃x∀y∃z and ∀x∃y∀z 
   (c) ∀x∃y∀z∃w and ∃x∀y∃z∀w
 ```
-	(a) ∃x∀y and ∀x∃y
+(a) ∃x∀y and ∀x∃y
   The formula ∃x∀y means there is some x such that for all ys. Instead, ∀x∃y means for all xs there is  some y such that. 
 
-  (b) ∃x∀y∃z and ∀x∃y∀z 
+(b) ∃x∀y∃z and ∀x∃y∀z 
   The formula  ∃x∀y∃z means there is some x such that for all ys there is some z. Instead, ∀x∃y∀z for all xs there is some y such that for all z.
 
-  (c) ∀x∃y∀z∃w and ∃x∀y∃z∀w
+(c) ∀x∃y∀z∃w and ∃x∀y∃z∀w
   The formula ∀x∃y∀z∃w means for all xs there is some y such that for all zs there is some w such that. Instead, the formula ∃x∀y∃z∀w means there is some x for all ys such as that there is some z for all ws.
 
-  We developped our answers comparing them to those of Giancomo and Karl and those found online.
+We developped our answers comparing them to those of Giancomo and Karl and those found online.
 
 TO DISCUSS WITH JISOO
 
