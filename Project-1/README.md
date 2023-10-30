@@ -215,9 +215,80 @@ B ≡ M ⊓ ≥2∃parent_of.Person
 
 
 9. Using a natural deduction proof generator - such as the one found here `https://proofs.openlogicproject.org/` - provide natural deduction proofs for each of De Morgan's laws. 
+ ```
+(a) ∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx))
 
+∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx)) [Given]
+Let a be an arbitrary element. [Assumption for universal introduction]
+Let b be an arbitrary element. [Assumption for universal introduction]
+¬(Pa ∧ Qa) → (¬Pa ∨ ¬Qa) [Universal instantiation using a and b]
+¬(Pa ∧ Qa) [Assumption for ¬-elimination]
+¬Pa ∨ ¬Qa [Modus Ponens (4, 5)]
+¬Qa ∨ ¬Pa [Commutation (6)]
+¬Qa [Assumption for ∨-elimination]
+¬Qa ∨ ¬Pa [Repetition (7)]
+¬Pa [Disjunctive syllogism (8, 9)]
+¬Pa ∨ ¬Qa [Repetition (10)]
+(¬Pa ∨ ¬Qa) [∨-elimination (8-11)]
+¬(Pa ∧ Qa) → (¬Pa ∨ ¬Qa) [→-introduction (5-12)]
+∀y(¬(Pa ∧ Qa) → (¬Pa ∨ ¬Qa)) [∀-introduction (3-13)]
+∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx)) [∀-introduction (2-14)]
 
+(b) ∀x∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx))
 
+∀x∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx)) [Given]
+Let a be an arbitrary element. [Assumption for universal introduction]
+Let b be an arbitrary element. [Assumption for universal introduction]
+¬(Pa ∨ Qa) → (¬Pa ∧ ¬Qa) [Universal instantiation using a and b]
+¬(Pa ∨ Qa) [Assumption for →-elimination]
+¬Pa ∧ ¬Qa [Modus Ponens (4, 5)]
+¬Pa [Conjunction elimination (6)]
+¬Qa [Conjunction elimination (6)]
+¬Pa [∧-elimination (7)]
+¬Qa [∧-elimination (8)]
+¬Pa ∧ ¬Qa [∧-introduction (9, 10)]
+(¬Pa ∧ ¬Qa) [→-introduction (5, 11)]
+¬(Pa ∨ Qa) → (¬Pa ∧ ¬Qa) [→-introduction (5-12)]
+∀y(¬(Pa ∨ Qa) → (¬Pa ∧ ¬Qa)) [∀-introduction (3-13)]
+∀x∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx)) [∀-introduction (2-14)]
+
+(c) ∀x∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx))
+
+∀x∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx)) [Given]
+Let a be an arbitrary element. [Assumption for universal introduction]
+Let b be an arbitrary element. [Assumption for universal introduction]
+(¬Pa ∨ ¬Qa) → ¬(Pa ∧ Qa) [Universal instantiation using a and b]
+¬Pa ∨ ¬Qa [Assumption for →-elimination]
+¬(Pa ∧ Qa) [Modus Ponens (4, 5)]
+¬Pa [Assumption for ¬-elimination]
+¬Qa [Assumption for ¬-elimination]
+¬Pa ∨ ¬Qa [∨-introduction (7)]
+¬(Pa ∧ Qa) [¬-elimination (6, 8)]
+¬(Px ∧ Qx) [Universal instantiation using a (9, 10)]
+¬(Px ∧ Qx) [¬-introduction (7-11)]
+¬Px ∨ ¬Qx → ¬(Px ∧ Qx) [→-introduction (5-12)]
+∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx)) [∀-introduction (3-13)]
+∀x∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx)) [∀-introduction (2-14)]
+
+(d) ∀x∀y((¬Px ∧ ¬Qx) → ¬(Px ∨ Qx))
+
+∀x∀y((¬Px ∧ ¬Qx) → ¬(Px ∨ Qx)) [Given]
+Let a be an arbitrary element. [Assumption for universal introduction]
+Let b be an arbitrary element. [Assumption for universal introduction]
+(¬Pa ∧ ¬Qa) → ¬(Pa ∨ Qa) [Universal instantiation using a and b]
+(¬Pa ∧ ¬Qa) [Assumption for →-elimination]
+¬(Pa ∨ Qa) [Modus Ponens (4, 5)]
+¬Pa [Conjunction elimination (5)]
+¬Qa [Conjunction elimination (5)]
+¬(Pa ∨ Qa) [∧-elimination (7)]
+¬Pa [¬-elimination (6, 8)]
+¬Qa [¬-elimination (6, 8)]
+¬Pa [∧-elimination (8)]
+¬(Pa ∨ Qa) [¬-elimination (9)]
+¬(Pa ∨ Qa) [→-introduction (5, 13)]
+∀y((¬Pa ∧ ¬Qa) → ¬(Pa ∨ Qa)) [∀-introduction (3-14)]
+∀x∀y((¬Px ∧ ¬Qx) → ¬(Px ∨ Qx)) [∀-introduction (2-15)]
+ ```
 
 10. Compare and contrast the proofs provided for (a) in your answers to questions 8 and 9. Explain the different assumptions, strategies, etc. exhibited in tree proofs vs natural deduction proofs. 
  
