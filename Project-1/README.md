@@ -159,7 +159,19 @@ B ≡ M ⊓ ≥2∃parent_of.Person
   (b) ∃x∀y∃z and ∀x∃y∀z 
   (c) ∀x∃y∀z∃w and ∃x∀y∃z∀w
 ```
-	
+(a) ∃x∀y and ∀x∃y
+"∃x∀y" asserts the existence of at least one element, denoted as "x," for which a particular condition holds for all possible elements denoted as "y."
+"∀x∃y" asserts that, for every possible element x, there is at least one corresponding element y that satisfies a particular condition.
+
+(b) ∃x∀y∃z and ∀x∃y∀z
+"∃x∀y∃z" asserts the existence of at least one element, denoted as "x," for which a particular condition holds for all possible elements denoted as "y." And for each of these y, there exists at least one element "z" that satisfies a certain condition.
+"∀x∃y∀z" asserts that for every possible element x, there exists at least one corresponding element y such that, for all possible elements z, a particular condition holds.
+
+(c) ∀x∃y∀z∃w and ∃x∀y∃z∀w
+"∀x∃y∀z∃w" asserts that for every possible element x, there exists at least one corresponding element y such that, for all possible elements z, there exists at least one w that satisfies a certain condition.
+"∃x∀y∃z∀w" asserts the existence of at least one element x such that, for all possible elements y, there exists at least one z for which, for all possible elements w, a particular condition holds.
+
+
 7. Show that the following sentences are not equivalent by exhibiting a graph that models one but not both of these sentences:
 ```
 ∀x∃y∀z(R(x,y) ∧ R(x,z) ∧ R(y,z))
