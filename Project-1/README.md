@@ -176,8 +176,20 @@ B ≡ M ⊓ ≥2∃parent_of.Person
 ```
 ∀x∃y∀z(R(x,y) ∧ R(x,z) ∧ R(y,z))
 ∃x∀y∃z(R(x,y) ∧ R(x,z) ∧ R(y,z))
+
+∀x∃y∀z(R(x,y) ∧ R(x,z) ∧ R(y,z))
+   x
+  / \
+ y---z
+
+∃x∀y∃z(R(x,y) ∧ R(x,z) ∧ R(y,z))
+   x
+   |
+   |
+  / \
+ y   z
 ```
-	
+ 
 8. Using an online tableau proof generator - such as the one found here `https://www.umsu.de/trees/` - provide tree proofs of the following entailments, which are known as the De Morgan's laws:
   ```
   (a) ∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx))
