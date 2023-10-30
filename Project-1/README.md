@@ -291,4 +291,5 @@ Let b be an arbitrary element. [Assumption for universal introduction]
  ```
 
 10. Compare and contrast the proofs provided for (a) in your answers to questions 8 and 9. Explain the different assumptions, strategies, etc. exhibited in tree proofs vs natural deduction proofs. 
- 
+
+ In the tree proof of "∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx))," the strategy is to identify an instance of the statement (the conditional) and check if the antecedent implies the consequent. The natural deduction proof for the statement basically follows the same strategy, but there is an assumption of an arbitrary individual in order to generate the conditional.  
