@@ -153,16 +153,20 @@ This formula is impossible to define in ALC without ALCQ. We used ALCQ to define
 
 Person ≡ M ⊔ ¬M. p2 (parent of at least 2 children) ≡ ≥2 ∃parent_of.Person. 
 B ≡ M ⊓ ≥2∃parent_of.Person
+
+For now we stopped there as we wanted to move to the project 2. The project 2 first question has the same structure of this one. 
 ```
 
 5. Select two formulas defined in ALC from question 4 to form the basis of a T-Box. Supplement this T-box with whatever other axioms you like, as well as an A-box, so that you ultimately construct a knowledge base K = (T,A). Provide a _model_ of K. This may be graphical or symbolic or both. 
 
+We did not adress this question as we moved to the project 2. The project 2 second question has the same structure of this one.
 
 6. Explain the difference - using natural language - between the first-order prefixes:
 ```
   (a) ∃x∀y and ∀x∃y
   (b) ∃x∀y∃z and ∀x∃y∀z 
   (c) ∀x∃y∀z∃w and ∃x∀y∃z∀w
+
 
 (a) ∃x∀y and ∀x∃y
   The formula ∃x∀y means there is some x such that for all ys. Instead, ∀x∃y means for all xs there is  some y such that. 
@@ -175,13 +179,39 @@ B ≡ M ⊓ ≥2∃parent_of.Person
 
 We developped our answers comparing them to those of Giancomo and Karl and those found online.
 
-TO DISCUSS WITH JISOO
+The following answers ones have generated with help of ChatGPT.
+
+a) ∃x∀y and ∀x∃y
+"∃x∀y" asserts the existence of at least one element, denoted as "x," for which a particular condition holds for all possible elements denoted as "y."
+"∀x∃y" asserts that, for every possible element x, there is at least one corresponding element y that satisfies a particular condition.
+
+(b) ∃x∀y∃z and ∀x∃y∀z
+"∃x∀y∃z" asserts the existence of at least one element, denoted as "x," for which a particular condition holds for all possible elements denoted as "y." And for each of these y, there exists at least one element "z" that satisfies a certain condition.
+"∀x∃y∀z" asserts that for every possible element x, there exists at least one corresponding element y such that, for all possible elements z, a particular condition holds.
+
+(c) ∀x∃y∀z∃w and ∃x∀y∃z∀w
+"∀x∃y∀z∃w" asserts that for every possible element x, there exists at least one corresponding element y such that, for all possible elements z, there exists at least one w that satisfies a certain condition.
+"∃x∀y∃z∀w" asserts the existence of at least one element x such that, for all possible elements y, there exists at least one z for which, for all possible elements w, a particular condition holds.
 ```
 
 7. Show that the following sentences are not equivalent by exhibiting a graph that models one but not both of these sentences:
 ```
 ∀x∃y∀z(R(x,y) ∧ R(x,z) ∧ R(y,z))
 ∃x∀y∃z(R(x,y) ∧ R(x,z) ∧ R(y,z))
+
+
+∀x∃y∀z(R(x,y) ∧ R(x,z) ∧ R(y,z))
+   x
+  / \
+ y---z
+
+∃x∀y∃z(R(x,y) ∧ R(x,z) ∧ R(y,z))
+   x
+   |
+   |
+  / \
+ y   z
+This was a tentative answer. To discuss more and improve.
 ```
 	
 8. Using an online tableau proof generator - such as the one found here `https://www.umsu.de/trees/` - provide tree proofs of the following entailments, which are known as the De Morgan's laws:
@@ -210,5 +240,94 @@ TO DISCUSS WITH JISOO
 
 9. Using a natural deduction proof generator - such as the one found here `https://proofs.openlogicproject.org/` - provide natural deduction proofs for each of De Morgan's laws. 
 
+```
+(a) ∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx))
+
+∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx)) [Given]
+Let a be an arbitrary element. [Assumption for universal introduction]
+Let b be an arbitrary element. [Assumption for universal introduction]
+¬(Pa ∧ Qa) → (¬Pa ∨ ¬Qa) [Universal instantiation using a and b]
+¬(Pa ∧ Qa) [Assumption for ¬-elimination]
+¬Pa ∨ ¬Qa [Modus Ponens (4, 5)]
+¬Qa ∨ ¬Pa [Commutation (6)]
+¬Qa [Assumption for ∨-elimination]
+¬Qa ∨ ¬Pa [Repetition (7)]
+¬Pa [Disjunctive syllogism (8, 9)]
+¬Pa ∨ ¬Qa [Repetition (10)]
+(¬Pa ∨ ¬Qa) [∨-elimination (8-11)]
+¬(Pa ∧ Qa) → (¬Pa ∨ ¬Qa) [→-introduction (5-12)]
+∀y(¬(Pa ∧ Qa) → (¬Pa ∨ ¬Qa)) [∀-introduction (3-13)]
+∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx)) [∀-introduction (2-14)]
+
+(b) ∀x∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx))
+
+∀x∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx)) [Given]
+Let a be an arbitrary element. [Assumption for universal introduction]
+Let b be an arbitrary element. [Assumption for universal introduction]
+¬(Pa ∨ Qa) → (¬Pa ∧ ¬Qa) [Universal instantiation using a and b]
+¬(Pa ∨ Qa) [Assumption for →-elimination]
+¬Pa ∧ ¬Qa [Modus Ponens (4, 5)]
+¬Pa [Conjunction elimination (6)]
+¬Qa [Conjunction elimination (6)]
+¬Pa [∧-elimination (7)]
+¬Qa [∧-elimination (8)]
+¬Pa ∧ ¬Qa [∧-introduction (9, 10)]
+(¬Pa ∧ ¬Qa) [→-introduction (5, 11)]
+¬(Pa ∨ Qa) → (¬Pa ∧ ¬Qa) [→-introduction (5-12)]
+∀y(¬(Pa ∨ Qa) → (¬Pa ∧ ¬Qa)) [∀-introduction (3-13)]
+∀x∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx)) [∀-introduction (2-14)]
+
+(c) ∀x∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx))
+
+∀x∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx)) [Given]
+Let a be an arbitrary element. [Assumption for universal introduction]
+Let b be an arbitrary element. [Assumption for universal introduction]
+(¬Pa ∨ ¬Qa) → ¬(Pa ∧ Qa) [Universal instantiation using a and b]
+¬Pa ∨ ¬Qa [Assumption for →-elimination]
+¬(Pa ∧ Qa) [Modus Ponens (4, 5)]
+¬Pa [Assumption for ¬-elimination]
+¬Qa [Assumption for ¬-elimination]
+¬Pa ∨ ¬Qa [∨-introduction (7)]
+¬(Pa ∧ Qa) [¬-elimination (6, 8)]
+¬(Px ∧ Qx) [Universal instantiation using a (9, 10)]
+¬(Px ∧ Qx) [¬-introduction (7-11)]
+¬Px ∨ ¬Qx → ¬(Px ∧ Qx) [→-introduction (5-12)]
+∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx)) [∀-introduction (3-13)]
+∀x∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx)) [∀-introduction (2-14)]
+
+(d) ∀x∀y((¬Px ∧ ¬Qx) → ¬(Px ∨ Qx))
+
+∀x∀y((¬Px ∧ ¬Qx) → ¬(Px ∨ Qx)) [Given]
+Let a be an arbitrary element. [Assumption for universal introduction]
+Let b be an arbitrary element. [Assumption for universal introduction]
+(¬Pa ∧ ¬Qa) → ¬(Pa ∨ Qa) [Universal instantiation using a and b]
+(¬Pa ∧ ¬Qa) [Assumption for →-elimination]
+¬(Pa ∨ Qa) [Modus Ponens (4, 5)]
+¬Pa [Conjunction elimination (5)]
+¬Qa [Conjunction elimination (5)]
+¬(Pa ∨ Qa) [∧-elimination (7)]
+¬Pa [¬-elimination (6, 8)]
+¬Qa [¬-elimination (6, 8)]
+¬Pa [∧-elimination (8)]
+¬(Pa ∨ Qa) [¬-elimination (9)]
+¬(Pa ∨ Qa) [→-introduction (5, 13)]
+∀y((¬Pa ∧ ¬Qa) → ¬(Pa ∨ Qa)) [∀-introduction (3-14)]
+∀x∀y((¬Px ∧ ¬Qx) → ¬(Px ∨ Qx)) [∀-introduction (2-15)]
+
+We generate this asnwer using ChatGPT.
+```
 10. Compare and contrast the proofs provided for (a) in your answers to questions 8 and 9. Explain the different assumptions, strategies, etc. exhibited in tree proofs vs natural deduction proofs. 
  
+ ```
+ In the tree proof of "∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx))," the strategy is to deny the conditional to get contradictions (indirect deduction strategy). The natural deduction proof for the statement uses the conditional deduction strategy.
+
+ This was a tentative answer. To discuss more and improve.to ask to John too.
+
+ We chacked Karl and Giacomo's answers.
+ We report them here.
+ Karl: "For (a), a Fitch-style natural deduction proof relies on deductive rules like disjunction elimination or double negation elimination (DNE) to a more substantive degree than a tree proof.
+ While a Fitch-style natural deduction proof is a combinational application of different means of derivation, a tree proof is essentially an application of indirect derivation. That is, when we do a tree proof, we have to decompose the target (complex) formula into its subformulas, and then differently connect negations of those subformulas in order to form different paths. Once when all paths somehow involve a contradiction, then the opposite possibilities of the target formula are all shown to be implausible, and thus the target formula will be proved.
+ Moreover, a Fitch-style natural deduction proof is to apply rules to the target formula and its logical consequents, while a tree proof does not apply the same rules but concentrates on finding possible logical contradictions among negated subformulas of the target formula."
+
+ Giacomo: " The tree method starts by assuming the negation of the statement to prove. It then applies a set of rule of derivations in order to find closed branches which provide a countermodel to the negated statement and ultimately prove it wrong (thus proving the original statement). The natural deduction method instead breaks the statement into an assumption and a consequence and then applies rules which transform the original statement into the cnosequence. In alternative, it can negate the statement and reach a contradiction, thus proving the statement true. 8a) starts by negating the statement we want to prove, then gets rid of the quantifiers, then unwraps the negation of the implication, then applie rules to break down the disjunction in line 5 and then eliminates the double negation. We are left with either Qa or Pa being true. Buth both are in contradiction with the breaking down of line 4. Hence, the negated statement is contradictory and we have proved our initial goal. 9a) starts by assuming the antecedent inside the parenthesis. Then assumes the negation of the consequent. Then goes on to prove that this is contradictory, and prove the consequent starting from the antecedent. Even if there are proofs by contradiction inside of this strategy, it remains different from the tableau method because we started by assuming one of the elements and then proved that the other element followed from it. Using the tableau method, we rather tried to negate the whole statement and proved that it brings to a contradiction by exploring each possbility."
+ ```
