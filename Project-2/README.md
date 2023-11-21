@@ -19,18 +19,19 @@ Tip #4: Work together as a team.
 ```
 (a) PP that says that x is a proper part of y
 P= is a part of
-PP ≡ x≠y ⊓ ∀y∃x.(P(x,y) ⊓ ¬P¯(x,y))
+PP ≡  P ⊓ ¬P¯
+We don't need x≠y because we are not specifying variables.
 
 (b) iPP that says that y is a proper part of x
-P= is a part of
-iPP ≡ x≠y ⊓ ∀x∃y.(¬P(x,y) ⊓ P¯(x,y))
+ iPP ≡ PP¯
 
 c)  iP that says that x has y as part 
-iP ≡ iPP¯
+iP ≡ P¯
 
 (d)  O that says that x overlaps y
 
 (e)  D that says that x and y are disjoint 
+D ≡ ¬O
 
 We checked our answers with Giacomo's.
 2. Use your axioms from question 1 as the basis of an ALCI T-Box. Supplement this T-box with whatever other axioms you like, as well as an A-box, so that you ultimately construct a knowledge base K = (T,A). Provide a _model_ of K. This may be graphical or symbolic or both. 
