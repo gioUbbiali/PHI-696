@@ -45,3 +45,25 @@ You're probably thinking, "why would I submit a level 8 kata if they're not wort
 It is your responsibility and the responsibility of your peers reviewing your submission in PR to determine whether your submission is ranked appropriately. In the event that consensus is reached that your kata is ranked inappropriately, you must work with your peers to revise the submission so that it is either more or less challenging, accordingly. You are not permitted to submit new problems with different strengths after PRs are open, but must instead revise your PRs. So, think hard about how challenging your submission is. 
 
 There is one other option for those desiring a different sort of challenge. If you provide alongside your SPARQL submission a translation of the same problem into SQL, complete with documentations, solution, etc. then you may receive half points extra at that kata level (rounded up). For example, if you submit a SPARQL problem that is kata rank 1 and also submit a SQL version of that same problem, you  will receive 35+18=53 points. 
+
+
+Here are our schemas:
+Animal schema:
+ex:animal a rdfs:Class .
+ex:eats a rdf:Property ; 
+                       rdfs:domain ex:animal ; 
+                       rdfs:range ex:food . 
+ex:has_id a rdf:Property ; 
+                rdfs:domain ex:animal ; 
+                rdfs:range xsd:string .
+Food schema:
+ex:food a rdfs:Class .
+ex:eaten by a rdf:Property ; 
+                       rdfs:domain ex:food ; 
+                       rdfs:range ex:animal . 
+ex:has_id a rdf:Property ; 
+                rdfs:domain ex: food; 
+                rdfs:range xsd:string .
+
+Exercise 1:
+what does an animal eat?
