@@ -53,7 +53,7 @@ ex:animal a rdfs:Class .
 ex:eats a rdf:Property ; 
                        rdfs:domain ex:animal ; 
                        rdfs:range ex:food . 
-ex:has_id a rdf:Property ; 
+ex:has_name a rdf:Property ; 
                 rdfs:domain ex:animal ; 
                 rdfs:range xsd:string .
 Food schema:
@@ -61,9 +61,56 @@ ex:food a rdfs:Class .
 ex:eaten by a rdf:Property ; 
                        rdfs:domain ex:food ; 
                        rdfs:range ex:animal . 
-ex:has_id a rdf:Property ; 
+ex:has_name a rdf:Property ; 
                 rdfs:domain ex: food; 
                 rdfs:range xsd:string .
 
+
+
 Exercise 1:
-what does an animal eat?
+Taka question: Select names of food that all animals eat.
+
+Solution: we wrote the following SPARQL Query.
+
+PREFIX rdfs: http://example.org/animals/  
+SELECT ?name?food
+ WHERE
+   {
+  	?animals rdfs:eats ?food ;
+        ?food rdfs:has_name ?name .
+   }
+
+We should get all names of all foods eaten by any animal.
+
+
+Exercise 2:
+Taka question: Select Select names of food eaten by cats.
+
+Solution: we wrote the following SPARQL Query.
+
+PREFIX rdfs: http://example.org/animals/  
+SELECT ?name?food
+ WHERE
+   {
+        ?animal rdfs:eats ?food ;
+        ?animal rdfs:has_name ?cat ;
+        ?food rdfs:has_name ?name .
+   }
+
+We should get all names of foods eaten by cats.
+
+
+Exercise 3:
+Taka question: Select names of animals eating carrots.
+
+Solution: we wrote the following SPARQL Query.
+
+PREFIX rdfs: http://example.org/food/  
+SELECT ?name?animal
+ WHERE
+   {
+        ?food rdfs:eaten by ?animal ;
+        ?food rdfs:has_name ?carrot .
+    }
+
+We should get all names of animals that eat carrots.
