@@ -73,6 +73,9 @@ Taka question: Select names of food that all animals eat.
 Solution: we wrote the following SPARQL Query.
 
 PREFIX rdfs: http://example.org/animals/  
+
+I don't think you can do this, since rdfs has its own URI for the rdfs prefix. You have to make your own (I used ex: for example)
+
 SELECT ?name?food
  WHERE
    {
@@ -94,6 +97,9 @@ SELECT ?name?food
    {
         ?animal rdfs:eats ?food ;
         ?animal rdfs:has_name ?cat ;
+
+ You cannot do this because your has_name property only links with food, as declared in the schema
+ 
         ?food rdfs:has_name ?name .
    }
 
@@ -107,10 +113,14 @@ Solution: we wrote the following SPARQL Query.
 
 PREFIX rdfs: http://example.org/food/  
 SELECT ?name?animal
+
+You are not declaring any ?name variable in the rest of the query. The computer won't know what you refer to by ?name
+
  WHERE
    {
         ?food rdfs:eaten by ?animal ;
         ?food rdfs:has_name ?carrot .
+You have to use the actual string here, not a variable with a question mark. Remember that the computer doesn't know what you mean by "carrot", and if you have the ? question mark, it could be whatever. This will recover all the foods that have whatever name.
     }
 
 We should get all names of animals that eat carrots.
