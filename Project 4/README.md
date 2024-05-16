@@ -118,9 +118,10 @@ You are not declaring any ?name variable in the rest of the query. The computer 
 
  WHERE
    {
-        ?food rdfs:eaten by ?animal ;
-        ?food rdfs:has_name ?carrot .
-You have to use the actual string here, not a variable with a question mark. Remember that the computer doesn't know what you mean by "carrot", and if you have the ? question mark, it could be whatever. This will recover all the foods that have whatever name.
+        ?animal rdfs: has_name ?name ;
+	?food rdfs:eaten by ?animal ;
+        ?food rdfs:has_name carrot .
+
     }
 
 We should get all names of animals that eat carrots.
