@@ -48,23 +48,25 @@ There is one other option for those desiring a different sort of challenge. If y
 
 
 Here are our schemas:
+
+Prefix schema:
+rdf:
+rdfs:
+
 Animal schema:
 ex:animal a rdfs:Class .
 ex:eats a rdf:Property ; 
                        rdfs:domain ex:animal ; 
                        rdfs:range ex:food . 
-ex:has_name a rdf:Property ; 
-                rdfs:domain ex:animal ; 
-                rdfs:range xsd:string .
 Food schema:
 ex:food a rdfs:Class .
 ex:eaten by a rdf:Property ; 
                        rdfs:domain ex:food ; 
                        rdfs:range ex:animal . 
-ex:has_name a rdf:Property ; 
-                rdfs:domain ex: food; 
-                rdfs:range xsd:string .
 
+ex:has_name a rdf:Property ; 
+                      rdfs:domain owl:thing ;
+                      rdfs:range xsd:string .
 
 
 Exercise 1:
@@ -72,15 +74,13 @@ Taka question: Select names of food that all animals eat.
 
 Solution: we wrote the following SPARQL Query.
 
-PREFIX rdfs: http://example.org/animals/  
-
-I don't think you can do this, since rdfs has its own URI for the rdfs prefix. You have to make your own (I used ex: for example)
+PREFIX ex: http://example.org/animals/  
 
 SELECT ?name?food
  WHERE
    {
-  	?animals rdfs:eats ?food ;
-        ?food rdfs:has_name ?name .
+  	?animals ex:eats ?food ;
+        ?food ex:has_name ?name .
    }
 
 We should get all names of all foods eaten by any animal.
@@ -91,12 +91,12 @@ Taka question: Select Select names of food eaten by cats.
 
 Solution: we wrote the following SPARQL Query.
 
-PREFIX rdfs: http://example.org/animals/  
+PREFIX ex: http://example.org/animals/  
 SELECT ?name?food
  WHERE
    {
-        ?animal rdfs:eats ?food ;
-        ?animal rdfs:has_name ?cat ;
+        ?animal ex:eats ?food ;
+        ?animal ex:has_name ?cat ;
 
  You cannot do this because your has_name property only links with food, as declared in the schema
  
