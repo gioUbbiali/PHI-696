@@ -123,3 +123,5 @@ SELECT ?name?animal
     }
 
 We should get all names of animals that eat carrots.
+
+We checked all hese exercise with Giacomo.
