@@ -68,6 +68,8 @@ ex:has_name a rdf:Property ;
                       rdfs:domain owl:thing ;
                       rdfs:range xsd:string .
 
+ex:rabbit 1 a ex:animal;
+                     ex.has_name 'rabbit 1'.
 
 Exercise 1:
 Taka question: Select names of food that all animals eat.
@@ -118,9 +120,10 @@ You are not declaring any ?name variable in the rest of the query. The computer 
 
  WHERE
    {
-        ?animal rdfs: has_name ?name ;
-	?food rdfs:eaten by ?animal ;
-        ?food rdfs:has_name carrot .
+       
+	ex:animal ex: has_name ?name ;
+	?food ex:eaten by ?animal ;
+        ?food ex:has_name "carrot" .
 
     }
 
