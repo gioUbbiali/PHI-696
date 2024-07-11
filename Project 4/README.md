@@ -99,9 +99,6 @@ SELECT ?name?food
    {
         ?animal ex:eats ?food ;
         ?animal ex:has_name ?cat ;
-
- You cannot do this because your has_name property only links with food, as declared in the schema
- 
         ?food rdfs:has_name ?name .
    }
 
