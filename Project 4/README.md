@@ -113,8 +113,6 @@ Solution: we wrote the following SPARQL Query.
 PREFIX rdfs: http://example.org/food/  
 SELECT ?name?animal
 
-You are not declaring any ?name variable in the rest of the query. The computer won't know what you refer to by ?name
-
  WHERE
    {
        
