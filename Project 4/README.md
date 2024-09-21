@@ -45,3 +45,83 @@ You're probably thinking, "why would I submit a level 8 kata if they're not wort
 It is your responsibility and the responsibility of your peers reviewing your submission in PR to determine whether your submission is ranked appropriately. In the event that consensus is reached that your kata is ranked inappropriately, you must work with your peers to revise the submission so that it is either more or less challenging, accordingly. You are not permitted to submit new problems with different strengths after PRs are open, but must instead revise your PRs. So, think hard about how challenging your submission is. 
 
 There is one other option for those desiring a different sort of challenge. If you provide alongside your SPARQL submission a translation of the same problem into SQL, complete with documentations, solution, etc. then you may receive half points extra at that kata level (rounded up). For example, if you submit a SPARQL problem that is kata rank 1 and also submit a SQL version of that same problem, you  will receive 35+18=53 points. 
+
+
+Here are our schemas:
+
+Prefix schema:
+rdf:
+rdfs:
+
+Animal schema:
+ex:animal a rdfs:Class .
+ex:eats a rdf:Property ; 
+                       rdfs:domain ex:animal ; 
+                       rdfs:range ex:food . 
+Food schema:
+ex:food a rdfs:Class .
+ex:eaten by a rdf:Property ; 
+                       rdfs:domain ex:food ; 
+                       rdfs:range ex:animal . 
+
+ex:has_name a rdf:Property ; 
+                      rdfs:domain owl:thing ;
+                      rdfs:range xsd:string .
+
+ex:rabbit 1 a ex:animal;
+                     ex.has_name 'rabbit 1'.
+
+Exercise 1:
+Taka question: Select names of food that all animals eat.
+
+Solution: we wrote the following SPARQL Query.
+
+PREFIX ex: http://example.org/animals/  
+
+SELECT ?name?food
+ WHERE
+   {
+  	?animals ex:eats ?food ;
+        ?food ex:has_name ?name .
+   }
+
+We should get all names of all foods eaten by any animal.
+
+
+Exercise 2:
+Taka question: Select Select names of food eaten by cats.
+
+Solution: we wrote the following SPARQL Query.
+
+PREFIX ex: http://example.org/animals/  
+SELECT ?name?food
+ WHERE
+   {
+        ?animal ex:eats ?food ;
+        ?animal ex:has_name ?cat ;
+        ?food rdfs:has_name ?name .
+   }
+
+We should get all names of foods eaten by cats.
+
+
+Exercise 3:
+Taka question: Select names of animals eating carrots.
+
+Solution: we wrote the following SPARQL Query.
+
+PREFIX rdfs: http://example.org/food/  
+SELECT ?name?animal
+
+ WHERE
+   {
+       
+	ex:animal ex: has_name ?name ;
+	?food ex:eaten by ?animal ;
+        ?food ex:has_name "carrot" .
+
+    }
+
+We should get all names of animals that eat carrots.
+
+We checked all hese exercise with Giacomo.
