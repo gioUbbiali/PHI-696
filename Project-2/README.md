@@ -17,7 +17,23 @@ Tip #4: Work together as a team.
   (d)  O that says that x overlaps y
   (e)  D that says that x and y are disjoint 
 ```
+(a) PP that says that x is a proper part of y
+P= is a part of
+PP ≡  P ⊓ ¬P¯
+We don't need x≠y because we are not specifying variables.
 
+(b) iPP that says that y is a proper part of x
+ iPP ≡ PP¯
+
+c)  iP that says that x has y as part 
+iP ≡ P¯
+
+(d)  O that says that x overlaps y
+
+(e)  D that says that x and y are disjoint 
+D ≡ ¬O
+
+We checked our answers with Giacomo's.
 2. Use your axioms from question 1 as the basis of an ALCI T-Box. Supplement this T-box with whatever other axioms you like, as well as an A-box, so that you ultimately construct a knowledge base K = (T,A). Provide a _model_ of K. This may be graphical or symbolic or both. 
 
 3. Translate the following first-order logic axioms into ALCI: 
@@ -54,3 +70,4 @@ Tip #4: Work together as a team.
   (e) There are no parts between a and g in common
 ```
 Provide a screenshot of your results here. 
+
